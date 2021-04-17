@@ -5,8 +5,6 @@ const USER_API = "https://jsonplaceholder.typicode.com/users/";
 const TODO_API = "https://jsonplaceholder.typicode.com/todos/";
 
 
-let userList = [];
-let todosList = [];
 
 const resolvers = {
   Query: {
@@ -54,11 +52,9 @@ async function getRestUsersList() {
 
 async function getTodosList() {
   try {
-    const todos = await axios.get(TODO_API);
-    todosList = todos.data;
-    console.log(todos.data);
+    const todos = await axios.get(TODO_API);  
     
-    return todosList;
+    return todos.data;
   } catch(e) {
     throw e;
   }
